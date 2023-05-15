@@ -1,0 +1,138 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    /*caso a poppins não carregue, sans serif será aplicada */
+
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: #666565ad;
+    color: #333333;
+
+    background: rgb(0, 212, 255);
+    background: linear-gradient(90deg, rgba(0, 212, 255, 1) 0%, rgba(15, 233, 222, 1) 18%, rgba(26, 188, 190, 0.9738270308123249) 45%, rgba(115, 230, 175, 0.9738270308123249) 76%);
+
+    /* background: rgb(131,58,180);  Gradient noturno
+   background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(62,14,62,1) 0%, rgba(131,58,180,1) 55%, rgba(174,58,180,1) 68%, rgba(253,29,156,1) 85%, rgba(252,69,188,1) 100%); */
+}
+
+body.modo-escuro {
+    background: rgb(0, 212, 255);
+    background: linear-gradient(90deg, rgba(0, 212, 255, 1) 0%, rgba(79, 13, 125, 1) 0%, rgba(112, 31, 182, 1) 16%, rgba(101, 32, 187, 1) 30%, rgba(101, 33, 190, 1) 32%, rgba(84, 40, 199, 1) 65%, rgba(85, 46, 203, 1) 69%);
+}
+
+header {
+
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+/*Estilize a classe logo somente dentro da tag header, virgula permite outra class */
+header .logo,
+header .imagem-botao {
+    width: 50px;
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+header #botao-alterar-tema {
+    background: none;
+    border: none;
+}
+
+header .logo:hover,
+header .imagem-botao:hover,
+main .cartao-pokemon:hover {
+    transform: scale(1.04);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+main {
+    padding: 25px;
+}
+
+
+/*Flex tem por padrão, flex-direction: row, para estilizar filho, o pai precisa ser flex/estilizado */
+.listagem-pokemon {
+    display: flex;
+    flex-wrap: wrap;
+    /*Se nao tiver largura, nao pega o wrap (width ali embaixo) */
+    gap: 30px;
+    justify-content: center;
+}
+
+.cartao-pokemon {
+    background-color: #d8e3ec;
+    width: 200px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border-radius: 15px;
+    transition: 0.2s ease-in-out;
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.cartao-pokemon:hover {
+    background-color: #96d9d6;
+}
+
+.modo-escuro .cartao-pokemon {
+    background: rgb(238, 174, 202);
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+
+main .cartao-pokemon .informacoes {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #333333;
+    border-radius: 10px;
+}
+
+.cartao-pokemon .informacoes span {
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 17px;
+}
+
+main .cartao-pokemon .gif {
+    width: 90px;
+    height: 90px;
+}
+
+main .cartao-pokemon .tipos {
+    display: flex;
+    gap: 15px;
+}
+
+main .cartao-pokemon .tipo {
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.grama {
+    background-color: #7ac74c;
+}
+
+.veneno {
+    background-color: #df67ddfb;
+}
+
+.fogo {
+    background-color: #ee8130;
+}
+
+.agua {
+    background-color: #6390f0;
+}
+
+.inseto {
+    background-color: #a6b91a;
+}
+
+main .descricao {
+    max-height: 80px;
+    overflow-y: scroll;
+    font-size: 14px;
+    padding-right: 10px;
+}
